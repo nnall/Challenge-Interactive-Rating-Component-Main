@@ -1,0 +1,264 @@
+
+
+:root{
+--white: hsl(0, 0%, 100%);
+--lightGrey: hsl(217, 12%, 63%);
+--mediumGrey: rgba(124, 135, 152, 0.313);
+--darkBlue: rgb(37, 45, 55);
+--veryDarkBlue: hsl(216, 12%, 8%);
+
+--orange: rgb(251, 116, 19);
+}
+
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+
+body{
+    min-height:100vh;
+    display:flex;
+    align-items:center;
+    justify-content: center;
+    background-color: var(--veryDarkBlue);
+    font-family:'Overpass', sans-serif;
+}
+
+.attribution{
+    position:absolute;
+    bottom:1rem;
+    color:var(--lightGrey);
+}
+
+.attribution a:visited, 
+.attribution a:link{
+ text-decoration:none;
+ color:var(--lightGrey);
+}
+
+.attribution a:hover{
+    color:var(--orange);
+}
+
+.main{
+    display:flex;
+    flex-direction:column;  
+    justify-content:space-between;
+    max-width:35rem;
+    min-height:35rem;
+    color: var(--white);
+    border-radius:40px;
+    padding:2.75rem 3rem 2.75rem 3rem;
+    background-image: radial-gradient(circle at top center, rgba(124, 135, 152, 0.441), var(--darkBlue)99%);
+    box-shadow: -3rem -3rem -3rem 5rem black;
+   
+} 
+
+
+/* ---------------------------------- ratingBox styling ----------------------------------- */
+
+/* Top Star */
+.ratingBox svg{
+    transform:scale(1.5);
+    background-color: var(--darkBlue);
+    border-radius: 50%;
+    padding:.68rem;
+    min-height:2.5rem;
+    min-width: 2.5rem;
+
+}
+
+h1{
+    font-size:2.5rem;
+    font-weight:400;
+}
+
+/* Overarching parent (entire card) - FRONT SIDE */
+ p {
+    font-size:.1rem;
+    margin-top:-2rem;
+    font-size:1.3rem;
+    line-height:1.7;
+    opacity:.7; 
+
+}
+
+/* FORM (dots & submit btn) */
+.numbers{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-around;
+}
+
+.numRow{
+    display:flex;
+    justify-content:space-around;
+    min-width:100%;
+    padding-bottom:1rem;
+    transform:translatey(-1rem);
+}
+
+.rating{
+    height:5rem;
+    width:5rem;
+    position:relative;
+    border-radius:50%;
+}
+
+/* the input dots */
+.rating input{
+    min-height:100%;
+    min-width:100%;
+    border-radius:50%;
+    position:absolute;
+    cursor:pointer;
+    opacity: 0;
+}
+
+input:hover + label{
+    background-color:var(--lightGrey);
+}
+
+input:checked + label{
+    background-color: var(--orange);
+    opacity:.8;
+}
+
+
+.rating label{
+    visibility:visible;
+    background-color: var(--mediumGrey);
+    min-height: 100%;
+    min-width:100%;
+    border-radius:50%;
+    cursor:pointer;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+/* ----------- SUBMIT BUTTON ------------- */
+.numbers button{
+    /* display:block; */
+    width:95%;
+    font-size:1.1rem;
+    background-color:var(--orange);
+    border:none;
+    /* min-width:4rem;
+    min-height:4rem; */
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items: center;
+    color:white;
+    opacity:.8;
+    transition:.1s ease-out;
+    /* min-width:100%; */
+   
+}
+
+.numbers button:hover{
+    background-color:var(--orange);
+    transform:scale(1.1);
+    opacity:1;
+    
+    cursor:pointer;
+}
+
+.numbers button:active {
+    background-color:rgb(84, 96, 110);
+    transform:scale(1);
+    /* border:4px solid var(--orange); */
+    color:var(--orange);
+    background-color: var(--white);
+}
+
+.numbers button:click-off {
+    transform:scale(1.1);
+}
+
+
+.selected{
+    background-color:rgb(84, 96, 110);
+    transform:scale(1);
+    border:4px solid var(--orange);
+    background-color: var(--darkBlue);
+}
+
+
+
+
+/* submit button */
+
+.submit{
+    align-self:center;
+    border:none;
+    border-radius:50px;
+    min-height:3.8rem;
+    min-width:25rem;
+    font-size:1.1rem;
+    text-transform: uppercase;
+    letter-spacing:.3rem;
+    background-color: var(--orange);
+    color:var(--white);
+    transition:.1s ease-out;
+}
+
+.submit:visited{
+    border:1px solid white;
+
+    
+    /* background-color:rgb(246, 124, 37); */
+}
+
+.submit:hover{
+    cursor:pointer;
+    /* min-height:3.9rem; */
+    transform:scale(1.06);
+    background-color: rgb(243, 153, 89);
+    box-shadow: 0rem 0rem 2rem rgba(0, 0, 0, 0.129);;
+    
+}   
+
+.submit:active{
+    transform:scale(1);
+    /* background-color:var(--orange); */
+    background-color:rgb(246, 124, 37);
+    border:1px solid white;
+}
+
+
+/* ---------------------------------- thankYouBox styling ----------------------------------- */
+
+
+
+.thankYouBox{
+    align-items:center;
+    justify-content:space-between;
+    padding:3.5rem 2.75rem 3.5rem 2.75rem;
+    display:none;
+}
+
+.thankYouBox p{
+    text-align: center;
+}
+.thankYouBox svg{
+    transform:scale(1.3) translatey(20px);
+
+    /* align-self: center; */
+}
+
+.message{
+    transform:translatey(25px);
+    color:var(--orange);
+    font-size:1.3rem;
+    padding:10px;
+    width:17rem;
+    text-align:center;
+    background-color:var(--mediumGrey);
+    border-radius:50px;
+}
